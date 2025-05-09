@@ -1,70 +1,70 @@
 
 # 🧠 MLP From Scratch
 
-Ce projet implémente un **Perceptron Multi-Couches (MLP)** **sans utiliser de frameworks de deep learning** comme TensorFlow ou PyTorch. Tout a été codé from scratch pour permettre une compréhension complète des mécanismes internes.
+This project implements a **Multi-Layer Perceptron (MLP)** **without using any deep learning frameworks** such as TensorFlow or PyTorch. Everything is built from the ground up to ensure a complete understanding of internal mechanisms.
 
 ---
 
-## 📚 Objectif
+## 📚 Objective
 
-Créer une API d'entraînement et d'inférence pour un réseau de neurones MLP, avec les contraintes suivantes :
+Build a training and inference API for an MLP neural network, fulfilling the following requirements:
 
-- ⚠️ Aucun framework AI (PyTorch, TensorFlow, etc.)
-- 🔁 Architecture MLP flexible
-- 🧠 Multiples fonctions d'activation
-- 📊 Classification et régression
-- 🧮 Initialisation des poids paramétrable
-- 🏃 Optimiseurs SGD : Momentum, RMSProp, Adam
-- 🛑 Critères d’arrêt personnalisables
-- 🧽 Régularisation L1, L2, Elastic Net
-- 📉 Suivi de la perte
-- ✅ Matrice de confusion
-- 🔀 (Optionnel) Exécution parallèle (multi-thread/GPU)
-- 🔌 (Optionnel) API Web REST
-- 🔧 Helpers et structure modulaire
+- ⚠️ No AI frameworks (e.g., PyTorch, TensorFlow, etc.)
+- 🔁 Flexible MLP architecture
+- 🧠 Multiple activation functions
+- 📊 Support for classification and regression
+- 🧮 Customizable weight initialization
+- 🏃 SGD optimizers: Momentum, RMSProp, Adam
+- 🛑 Customizable stopping criteria
+- 🧽 L1, L2, and Elastic Net regularization
+- 📉 Loss tracking and visualization
+- ✅ Confusion matrix computation
+- 🔀 (Optional) Parallel training (multi-thread/GPU)
+- 🔌 (Optional) Web API interface
+- 🔧 Helper classes and modular structure
 
 ---
 
-## 🛠️ Fonctionnalités implémentées
+## 🛠️ Implemented Features
 
-| Fonctionnalité                    | Statut      |
+| Feature                          | Status      |
 |----------------------------------|-------------|
-| Architecture MLP modulaire       | ✅           |
-| Fonctions d'activation (ReLU, Sigmoid, Tanh, etc.) | ✅ |
+| Modular MLP architecture         | ✅           |
+| Activation functions (ReLU, Sigmoid, Tanh, etc.) | ✅ |
 | Classification (MNIST)          | ✅           |
-| Régression (Boston Housing)     | ✅           |
-| Initialisation Xavier / He / Aléatoire | ✅    |
-| Optimiseurs : SGD, Momentum, RMSProp, Adam | ✅  |
-| Critères d'arrêt (convergence, patience, epochs) | ✅ |
-| Régularisation : L1, L2, ElasticNet | ✅         |
-| Matrice de confusion             | ✅           |
-| Suivi de la perte et visualisation | ✅         |
-| API Python bas-niveau            | ✅           |
-| API Web REST                     | 🚧 (en cours)|
-| Exécution multithread            | 🚧 (optionnel) |
+| Regression (Boston Housing)     | ✅           |
+| Xavier / He / Random initialization | ✅        |
+| Optimizers: SGD, Momentum, RMSProp, Adam | ✅     |
+| Stopping criteria (convergence, patience, epochs) | ✅ |
+| Regularization: L1, L2, ElasticNet | ✅         |
+| Confusion matrix                 | ✅           |
+| Loss tracking and visualization | ✅           |
+| Low-level API implementation    | ✅           |
+| REST API Web Interface          | 🚧 (in progress) |
+| Multithread support             | 🚧 (optional) |
 
 ---
 
-## 📁 Structure du projet
+## 📁 Project Structure
 
 ```
 mlp-from-scratch/
 │
-├── src/                     # Code source principal
-│   ├── core/                # MLP, layers, loss, activation
-│   ├── optim/               # Implémentation des optimiseurs
-│   ├── utils/               # Fonctions utilitaires
-│   └── api/                 # Interface d'entraînement et d'inférence
+├── src/                     # Core source code
+│   ├── core/                # MLP, layers, loss, activations
+│   ├── optim/               # Optimizer implementations
+│   ├── utils/               # Utility functions
+│   └── api/                 # Training/inference interface
 │
-├── data/                    # Jeux de données CSV
+├── data/                    # CSV datasets
 │
-├── results/                 # Modèles entraînés, courbes, matrices
+├── results/                 # Trained models, plots, confusion matrices
 │
-├── mnist-in-csv/            # Dataset MNIST en format CSV
+├── mnist-in-csv/            # MNIST dataset in CSV format
 │
-├── mlp.js                   # Fichier principal d'exécution
-├── loss_plot.html           # Visualisation de la courbe de perte
-└── README.md                # Ce fichier
+├── mlp.js                   # Main entry point
+├── loss_plot.html           # Loss curve visualization
+└── README.md                # This file
 ```
 
 ---
@@ -77,11 +77,11 @@ cd MLP-From-Scratch
 npm install
 ```
 
-> ⚠️ Si ton projet est en JS (Node.js), adapte selon le runtime (ou `python` si tu es passé par un autre langage).
+> ⚠️ If your project is written in JS (Node.js), adapt as needed (or use `python` if built in another language).
 
 ---
 
-## 🚀 Lancer un entraînement (exemple)
+## 🚀 Run Training (Example)
 
 ```bash
 node mlp.js --mode train --dataset mnist-in-csv/mnist_train.csv
@@ -89,44 +89,44 @@ node mlp.js --mode train --dataset mnist-in-csv/mnist_train.csv
 
 ---
 
-## 📊 Résultats attendus
+## 📊 Expected Outputs
 
-- ✅ Sauvegarde du modèle entraîné
-- ✅ Matrice de confusion affichée
-- ✅ Courbe de perte générée (`loss_plot.html`)
-- ✅ Évaluation sur test set
-- ✅ Fichier `model.json` sauvegardé
-
----
-
-## 📈 Exemple de visualisation
-
-*(à ajouter plus tard : image ou capture de ta courbe de perte ou de la matrice de confusion)*
+- ✅ Trained model saved to disk
+- ✅ Confusion matrix displayed
+- ✅ Loss curve generated (`loss_plot.html`)
+- ✅ Evaluation on test set
+- ✅ Model saved as `model.json`
 
 ---
 
-## 📄 Sources de données
+## 📈 Example Visualization
+
+*(To be added later: image of loss curve or confusion matrix screenshot)*
+
+---
+
+## 📄 Datasets
 
 - [MNIST CSV](https://www.kaggle.com/datasets/oddrationale/mnist-in-csv)
 - [Boston Housing](https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html)
 
 ---
 
-## 🧠 Conçu sans frameworks ML
+## 🧠 Framework-Free Design
 
-Ce projet est entièrement fait maison pour garantir une **compréhension complète du processus de deep learning**, de la propagation avant au backpropagation.
-
----
-
-## 📌 À faire
-
-- [ ] API Web REST (Express ou FastAPI)
-- [ ] Support GPU avec WebGL ou CUDA (optionnel)
-- [ ] Interface utilisateur simple
+This project is entirely handcrafted to provide a **deep understanding of deep learning** — from forward propagation to backpropagation.
 
 ---
 
-## 🙋‍♂️ Auteur
+## 📌 To Do
+
+- [ ] REST API Interface (e.g. Express or FastAPI)
+- [ ] GPU support using WebGL or CUDA (optional)
+- [ ] Simple user interface
+
+---
+
+## 🙋‍♂️ Author
 
 **Romain "Buchhromain"**  
-> Étudiant passionné, ce projet est une démonstration de compréhension et de savoir-faire algorithmique autour des réseaux de neurones.
+> A passionate learner — this project demonstrates my knowledge and hands-on capability in designing neural networks from scratch.
