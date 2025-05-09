@@ -37,35 +37,13 @@ Build a training and inference API for an MLP neural network, fulfilling the fol
 | Optimizers: SGD, Momentum, RMSProp, Adam | ✅     |
 | Stopping criteria (convergence, patience, epochs) | ✅ |
 | Regularization: L1, L2, ElasticNet | ✅         |
-| Confusion matrix                 | ✅           |
+| Confusion matrix                 | 🚧 (in progress) |
 | Loss tracking and visualization | ✅           |
-| Low-level API implementation    | ✅           |
+| Low-level API implementation    | 🚧 (in progress) |
 | REST API Web Interface          | 🚧 (in progress) |
 | Multithread support             | 🚧 (optional) |
 
 ---
-
-## 📁 Project Structure
-
-```
-mlp-from-scratch/
-│
-├── src/                     # Core source code
-│   ├── core/                # MLP, layers, loss, activations
-│   ├── optim/               # Optimizer implementations
-│   ├── utils/               # Utility functions
-│   └── api/                 # Training/inference interface
-│
-├── data/                    # CSV datasets
-│
-├── results/                 # Trained models, plots, confusion matrices
-│
-├── mnist-in-csv/            # MNIST dataset in CSV format
-│
-├── mlp.js                   # Main entry point
-├── loss_plot.html           # Loss curve visualization
-└── README.md                # This file
-```
 
 ---
 
@@ -84,7 +62,7 @@ npm install
 ## 🚀 Run Training (Example)
 
 ```bash
-node mlp.js --mode train --dataset mnist-in-csv/mnist_train.csv
+node mlp.js
 ```
 
 ---
@@ -95,13 +73,6 @@ node mlp.js --mode train --dataset mnist-in-csv/mnist_train.csv
 - ✅ Confusion matrix displayed
 - ✅ Loss curve generated (`loss_plot.html`)
 - ✅ Evaluation on test set
-- ✅ Model saved as `model.json`
-
----
-
-## 📈 Example Visualization
-
-*(To be added later: image of loss curve or confusion matrix screenshot)*
 
 ---
 
@@ -128,5 +99,5 @@ This project is entirely handcrafted to provide a **deep understanding of deep l
 
 ## 🙋‍♂️ Author
 
-**Romain "Buchhromain"**  
+**Romain Buchheister**  
 > A passionate learner — this project demonstrates my knowledge and hands-on capability in designing neural networks from scratch.
